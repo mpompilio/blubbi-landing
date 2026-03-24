@@ -19,7 +19,7 @@ export default function Home() {
       <div className={`fixed top-0 left-0 w-full z-50 transition ${
         scrolled ? "backdrop-blur-md bg-white/70 shadow-sm" : ""
       }`}>
-        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-5xl mx-auto px-6 py-1 flex justify-between items-center">
           <img
               src="/screens/logos.png"
               alt="blubbi logo"
