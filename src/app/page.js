@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 
@@ -25,9 +25,14 @@ export default function Home() {
               alt="blubbi logo"
               className="w-40 hover:scale-105 transition duration-300"
             />
-          <button className="text-sm px-4 py-2 rounded-lg bg-[#6EA8D6] text-white">
-            Join
-          </button>
+          <a
+            href="https://discord.gg/2DS6E9qHRH"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm px-4 py-2 rounded-lg bg-[#6EA8D6] text-white inline-block"
+          >
+            Join Discord
+          </a>
         </div>
       </div>
 
@@ -56,20 +61,28 @@ export default function Home() {
             Stop scrolling. Start talking.
           </p>
 
-          <p className="mt-4 text-gray-500 text-lg max-w-xl mx-auto">
+          <p className="mt-4 text-gray-700 text-lg max-w-xl mx-auto">
             The world has never been more connected - and people have never felt more alone. 
             We're changing that.
           </p>
 
           {/* CTA */}
-          <button className="mt-10 px-10 py-4 bg-[#6EA8D6] text-white rounded-2xl text-lg shadow-xl hover:scale-105 hover:shadow-2xl transition">
-            Join Early Access
-          </button>
+          <a
+            href="https://discord.gg/2DS6E9qHRH"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 px-10 py-4 bg-[#6EA8D6] text-white rounded-2xl text-lg shadow-xl hover:scale-105 hover:shadow-2xl transition inline-block"
+          >
+            Join the Discord
+          </a>
+          <p className="mt-4 text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
+            Early access to blubbi is soon! Join our Discord to be one of the first users.
+          </p>
         </section>
 
         {/* FLOATING SCREENSHOTS */}
         <section className="mt-24">
-          <h2 className="text-3xl font-semibold">See blubbi in action</h2>
+          <h2 className="text-3xl font-semibold text-gray-900">See blubbi in action</h2>
 
           <div className="mt-16 flex gap-10 overflow-x-auto px-4 pb-10">
 
@@ -78,6 +91,7 @@ export default function Home() {
               { src: "/screens/profile.png", label: "View profiles" },
               { src: "/screens/chat.png", label: "Real conversations" },
               { src: "/screens/rate.png", label: "Rate & earn bubbles" },
+              { src: "/screens/user-profile.png", label: "Build your profile" },
             ].map((item, i) => (
               <div
                 key={i}
@@ -91,7 +105,7 @@ export default function Home() {
                   />
                 </div>
 
-                <p className="mt-4 text-sm text-gray-500">{item.label}</p>
+                <p className="mt-4 text-sm text-gray-700">{item.label}</p>
               </div>
             ))}
 
@@ -100,8 +114,8 @@ export default function Home() {
 
         {/* WHAT IT IS */}
         <section className="mt-28 max-w-xl mx-auto">
-          <h2 className="text-3xl font-semibold">What is blubbi?</h2>
-          <p className="mt-4 text-gray-600 text-lg">
+          <h2 className="text-3xl font-semibold text-gray-900">What is blubbi?</h2>
+          <p className="mt-4 text-gray-700 text-lg">
             blubbi connects you with real people who actually want to talk.
             No pressure. No followers. Just conversation.
           </p>
@@ -109,7 +123,7 @@ export default function Home() {
 
         {/* HOW IT WORKS */}
         <section className="mt-28 max-w-3xl mx-auto">
-          <h2 className="text-3xl font-semibold">How it works</h2>
+          <h2 className="text-3xl font-semibold text-gray-900">How it works</h2>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
 
@@ -128,8 +142,8 @@ export default function Home() {
               },
             ].map((item, i) => (
               <div key={i} className="p-6 rounded-2xl bg-white shadow-md hover:shadow-lg transition">
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="text-gray-500 mt-2">{item.desc}</p>
+                <h3 className="font-semibold text-lg text-gray-900">{item.title}</h3>
+                <p className="text-gray-700 mt-2">{item.desc}</p>
               </div>
             ))}
 
@@ -138,7 +152,7 @@ export default function Home() {
 
         {/* FEATURES */}
         <section className="mt-28 max-w-2xl mx-auto">
-          <h2 className="text-3xl font-semibold">Why blubbi?</h2>
+          <h2 className="text-3xl font-semibold text-gray-900">Why blubbi?</h2>
 
           <div className="mt-10 grid gap-6 text-left">
 
@@ -149,8 +163,18 @@ export default function Home() {
               ["⭐ Earn bubbles", "Build your profile through great conversations."],
             ].map(([title, desc], i) => (
               <div key={i} className="p-4 rounded-xl hover:bg-white/60 transition">
-                <h3 className="font-semibold">{title}</h3>
-                <p className="text-gray-500">{desc}</p>
+                <h3 className="font-semibold text-gray-900">{title}</h3>
+                {title.includes("Safe & controlled") ? (
+                  <p className="text-gray-700">
+                    {desc}
+                    <br />
+                    <span className="italic">
+                      Text-only conversations -- no photos, no pressure.
+                    </span>
+                  </p>
+                ) : (
+                  <p className="text-gray-700">{desc}</p>
+                )}
               </div>
             ))}
 
@@ -159,22 +183,23 @@ export default function Home() {
 
         {/* CTA */}
         <section className="mt-32">
-          <h2 className="text-3xl font-semibold">
+          <h2 className="text-3xl font-semibold text-gray-900">
             Be one of the first on blubbi
           </h2>
 
-          <p className="mt-4 text-gray-500">
-            We’re launching soon. Get early access.
+          <p className="mt-4 text-gray-700">
+            We’re launching soon. Join our Discord for updates!
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3 items-center">
-            <input
-              placeholder="Enter your email"
-              className="px-5 py-3 border rounded-xl w-72 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#6EA8D6]"
-            />
-            <button className="px-6 py-3 bg-[#6EA8D6] text-white rounded-xl shadow-md hover:scale-105 transition">
-              Join
-            </button>
+            <a
+              href="https://discord.gg/2DS6E9qHRH"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-[#6EA8D6] text-white rounded-xl shadow-md hover:scale-105 transition inline-block"
+            >
+              Join Discord
+            </a>
           </div>
         </section>
 
@@ -187,3 +212,7 @@ export default function Home() {
     </main>
   );
 }
+
+
+
+
